@@ -8,36 +8,45 @@ import SiteHeader from '../components/SiteHeader.astro'
 
   <main class="pt-14">
     <!-- Hero -->
-    <section class="max-w-3xl mx-auto px-6 py-24 text-center">
-      <p class="text-green-400 font-medium text-sm uppercase tracking-wider">Asynchronous Transaction Assurance</p>
-      <h1 class="mt-4 text-4xl sm:text-5xl font-bold text-white tracking-tight">
-        Every async workflow makes a promise.<br />BounceProof keeps it honest.
-      </h1>
-      <p class="mt-6 text-lg text-gray-400">
-        Start a canary the moment a workflow kicks off. Resolve it the moment it finishes. If it never
-        bounces back — BounceProof catches it before your customers do.
-      </p>
-      <div class="mt-10 flex justify-center gap-4">
-        <a href="#" class="px-6 py-3 rounded bg-green-600 hover:bg-green-500 text-white font-medium transition-colors">
-          Get Started
-        </a>
-        <a href="#" class="px-6 py-3 rounded bg-gray-800 hover:bg-gray-700 text-white font-medium transition-colors">
-          View Docs
-        </a>
+    <section class="relative overflow-hidden">
+      <div class="absolute inset-0 -z-10 flex justify-center">
+        <div class="w-[600px] h-[600px] bg-green-500/20 rounded-full blur-3xl mt-[-200px]"></div>
+      </div>
+
+      <div class="relative max-w-3xl mx-auto px-6 py-28 text-center">
+        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-green-500/30 bg-green-500/10 text-green-400 text-xs font-medium">
+          Self-hosted &middot; Open SDK &middot; Zero black box
+        </span>
+        <h1 class="mt-6 text-5xl sm:text-6xl font-bold text-white tracking-tight leading-[1.1]">
+          Workflows fail silently.<br />Yours won't.
+        </h1>
+        <p class="mt-6 text-lg text-gray-400 max-w-xl mx-auto">
+          Start a canary the moment a workflow kicks off. Resolve it the moment it finishes.
+          If it never bounces back, <span class="text-green-500 font-semibold">BounceProof</span>
+          catches it before your customers do.
+        </p>
+        <div class="mt-10 flex justify-center gap-4">
+          <a href="#" class="px-6 py-3 rounded bg-green-600 hover:bg-green-500 text-white font-medium transition-colors">
+            Get Started
+          </a>
+          <a href="#" class="px-6 py-3 rounded bg-gray-800 hover:bg-gray-700 text-white font-medium transition-colors">
+            View Docs
+          </a>
+        </div>
       </div>
     </section>
 
     <!-- Why not just logs -->
     <section class="max-w-5xl mx-auto px-6 pb-24">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-white">This isn't log-based monitoring.</h2>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">This isn't log-based monitoring.</h2>
         <p class="mt-4 text-gray-400 max-w-2xl mx-auto">
           Traditional monitoring watches what already happened, after the fact, and asks you to guess what
-          a failure looks like in a sea of log lines and metrics. BounceProof flips that around.
+          a failure looks like in a sea of log lines and metrics. <span class="text-green-500 font-semibold">BounceProof</span> flips that around.
         </p>
       </div>
       <div class="grid sm:grid-cols-2 gap-6">
-        <div class="bg-gray-900 border border-gray-700 rounded-lg p-6">
+        <div class="bg-gray-900 border border-gray-700 rounded-xl p-6">
           <h3 class="text-gray-300 font-semibold">Traditional monitoring</h3>
           <ul class="mt-3 space-y-2 text-sm text-gray-500 list-disc list-inside">
             <li>Reactive — relies on someone noticing an anomaly in a dashboard or log stream</li>
@@ -46,7 +55,7 @@ import SiteHeader from '../components/SiteHeader.astro'
             <li>Tells you something is wrong, rarely confirms that something specific went right</li>
           </ul>
         </div>
-        <div class="bg-gray-900 border border-green-500/30 rounded-lg p-6">
+        <div class="bg-gray-900 border border-green-500/30 rounded-xl p-6">
           <h3 class="text-green-400 font-semibold">BounceProof</h3>
           <ul class="mt-3 space-y-2 text-sm text-gray-300 list-disc list-inside">
             <li>Proactive — you assert success up front, BounceProof watches for its absence</li>
@@ -59,38 +68,44 @@ import SiteHeader from '../components/SiteHeader.astro'
     </section>
 
     <!-- Core flow -->
-    <section class="max-w-5xl mx-auto px-6 pb-24 grid sm:grid-cols-3 gap-8">
-      <div class="bg-gray-900 border border-gray-700 rounded-lg p-6">
-        <h2 class="text-white font-semibold text-lg">Create</h2>
-        <p class="mt-2 text-gray-400 text-sm">
-          Start a canary from anywhere with the C# SDK when an asynchronous workflow kicks off.
-        </p>
-      </div>
-      <div class="bg-gray-900 border border-gray-700 rounded-lg p-6">
-        <h2 class="text-white font-semibold text-lg">Resolve</h2>
-        <p class="mt-2 text-gray-400 text-sm">
-          Mark the canary resolved from anywhere else once the workflow has completed successfully.
-        </p>
-      </div>
-      <div class="bg-gray-900 border border-gray-700 rounded-lg p-6">
-        <h2 class="text-white font-semibold text-lg">Get Alerted</h2>
-        <p class="mt-2 text-gray-400 text-sm">
-          If a canary doesn't resolve in time, BounceProof.io flags it immediately so you can investigate.
-        </p>
+    <section class="max-w-5xl mx-auto px-6 pb-24">
+      <h2 class="text-3xl sm:text-4xl font-bold text-white text-center tracking-tight">Three steps. No black box.</h2>
+      <div class="mt-12 grid sm:grid-cols-3 gap-8">
+        <div class="bg-gray-900 border border-gray-700 rounded-xl p-6">
+          <div class="w-9 h-9 rounded-lg bg-green-500/15 text-green-400 flex items-center justify-center font-bold">1</div>
+          <h3 class="mt-4 text-white font-semibold text-lg">Create</h3>
+          <p class="mt-2 text-gray-400 text-sm">
+            Start a canary from anywhere with the C# SDK when an asynchronous workflow kicks off.
+          </p>
+        </div>
+        <div class="bg-gray-900 border border-gray-700 rounded-xl p-6">
+          <div class="w-9 h-9 rounded-lg bg-green-500/15 text-green-400 flex items-center justify-center font-bold">2</div>
+          <h3 class="mt-4 text-white font-semibold text-lg">Resolve</h3>
+          <p class="mt-2 text-gray-400 text-sm">
+            Mark the canary resolved from anywhere else once the workflow has completed successfully.
+          </p>
+        </div>
+        <div class="bg-gray-900 border border-gray-700 rounded-xl p-6">
+          <div class="w-9 h-9 rounded-lg bg-green-500/15 text-green-400 flex items-center justify-center font-bold">3</div>
+          <h3 class="mt-4 text-white font-semibold text-lg">Get Alerted</h3>
+          <p class="mt-2 text-gray-400 text-sm">
+            If a canary doesn't resolve in time, <span class="text-green-500 font-semibold">BounceProof</span> flags it immediately so you can investigate.
+          </p>
+        </div>
       </div>
     </section>
 
     <!-- Feature details -->
-    <section class="max-w-5xl mx-auto px-6 pb-24">
-      <h2 class="text-3xl font-bold text-white text-center">Built for real workflows, not generic heartbeats</h2>
+    <section class="max-w-5xl mx-auto px-6 pb-28">
+      <h2 class="text-3xl sm:text-4xl font-bold text-white text-center tracking-tight">Built for real workflows, not generic heartbeats</h2>
       <div class="mt-12 grid sm:grid-cols-2 gap-8">
         <div>
           <h3 class="text-white font-semibold text-lg">Custom verifiers</h3>
           <p class="mt-2 text-gray-400 text-sm">
             Resolving a canary doesn't have to mean "trust the caller." Attach a custom verifier to any
-            canary type, and BounceProof will call out to your workflow-specific logic before marking it
+            canary type, and <span class="text-green-500 font-semibold">BounceProof</span> will call out to your workflow-specific logic before marking it
             healthy — checking that an order total matches, a payment cleared for the right amount, or a
-            file landed in the expected location. If the verifier rejects it, BounceProof alerts you even
+            file landed in the expected location. If the verifier rejects it, you get alerted even
             though the workflow technically reported in.
           </p>
         </div>
@@ -117,6 +132,21 @@ import SiteHeader from '../components/SiteHeader.astro'
             data never has to leave your network to be monitored.
           </p>
         </div>
+      </div>
+    </section>
+
+    <!-- Closing CTA -->
+    <section class="max-w-3xl mx-auto px-6 pb-28 text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+        Stop finding out from your customers.
+      </h2>
+      <p class="mt-4 text-gray-400">
+        Drop the SDK into your workflow, point it at your own engine, and let <span class="text-green-500 font-semibold">BounceProof</span> watch your back.
+      </p>
+      <div class="mt-8">
+        <a href="#" class="px-6 py-3 rounded bg-green-600 hover:bg-green-500 text-white font-medium transition-colors inline-block">
+          Get Started
+        </a>
       </div>
     </section>
   </main>
