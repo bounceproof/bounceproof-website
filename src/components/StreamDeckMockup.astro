@@ -1,0 +1,74 @@
+---
+const labels = [
+  'ORDER', 'EMAIL', 'PAYMT', 'SHIP', 'INVOICE', 'SYNC', 'BATCH', 'CRON',
+  'WEBHOOK', 'EXPORT', 'IMPORT', 'REFUND', 'NOTIFY', 'RENEW', 'BACKUP', 'INDEX',
+  'QUEUE', 'RETRY', 'AUDIT', 'REPORT', 'PURGE', 'SCAN', 'VERIFY', 'MERGE',
+  'DEPLOY', 'BUILD', 'PUBLISH', 'ARCHIVE', 'ROUTE', 'MATCH', 'SETTLE', 'CLOSE',
+]
+
+const redIndexes = new Set([5, 13, 22, 27])
+
+const upGraph = '0,22 4,20 8,21 12,16 16,17 20,11 24,12 28,6 32,8 36,3'
+const downGraph = '0,4 4,8 8,6 12,12 16,10 20,16 24,15 28,20 32,18 36,23'
+
+const keys = labels.map((label, i) => ({
+  label,
+  isRed: redIndexes.has(i),
+  graph: redIndexes.has(i) ? downGraph : upGraph,
+}))
+
+const cols = 8
+const rows = 4
+const keySize = 76
+const gap = 14
+const gridStartX = 56
+const gridStartY = 56
+
+const gridWidth = cols * keySize + (cols - 1) * gap
+const gridHeight = rows * keySize + (rows - 1) * gap
+
+const dialY = gridStartY + gridHeight + 46
+const totalWidth = gridStartX * 2 + gridWidth
+const totalHeight = dialY + 56
+---
+
+<svg viewBox={`0 0 ${totalWidth} ${totalHeight}`} xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+  <!-- Device body -->
+  <rect x="0" y="0" width={totalWidth} height={totalHeight} rx="28" fill="#0a0a0f" stroke="#2e303a" stroke-width="2" />
+
+  <!-- Keys -->
+  {keys.map((key, i) => {
+    const col = i % cols
+    const row = Math.floor(i / cols)
+    const x = gridStartX + col * (keySize + gap)
+    const y = gridStartY + row * (keySize + gap)
+    const bg = key.isRed ? '#3f1d1d' : '#142a1c'
+    const border = key.isRed ? '#ef4444' : '#22c55e'
+    const textColor = key.isRed ? '#fca5a5' : '#86efac'
+    const graphColor = key.isRed ? '#ef4444' : '#22c55e'
+
+    return (
+      <g>
+        <rect x={x} y={y} width={keySize} height={keySize} rx="10" fill={bg} stroke={border} stroke-width="1.5" />
+        <text x={x + keySize / 2} y={y + 20} text-anchor="middle" font-size="9" font-family="ui-monospace, monospace" fill={textColor} font-weight="600">
+          {key.label}
+        </text>
+        <g transform={`translate(${x + 8}, ${y + 30})`}>
+          <polyline points={key.graph} fill="none" stroke={graphColor} stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" />
+        </g>
+        <circle cx={x + keySize - 10} cy={y + keySize - 10} r="3" fill={key.isRed ? '#ef4444' : '#22c55e'} />
+      </g>
+    )
+  })}
+
+  <!-- Touch dial strip -->
+  {Array.from({ length: 8 }).map((_, i) => {
+    const x = gridStartX + i * (keySize + gap) + keySize / 2
+    return (
+      <g>
+        <circle cx={x} cy={dialY} r="20" fill="#16171d" stroke="#2e303a" stroke-width="2" />
+        <circle cx={x} cy={dialY} r="3" fill="#4b5563" />
+      </g>
+    )
+  })}
+</svg>

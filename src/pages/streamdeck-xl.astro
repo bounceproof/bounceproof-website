@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import SiteHeader from '../components/SiteHeader.astro'
+import StreamDeckMockup from '../components/StreamDeckMockup.astro'
 ---
 
 <Layout title="Stream Deck XL+ Integration — BounceProof.io">
@@ -15,6 +16,15 @@ import SiteHeader from '../components/SiteHeader.astro'
       <p class="mt-6 text-lg text-gray-400">
         BounceProof.io ships with a native Elgato Stream Deck XL+ integration, turning your 32-key panel
         into a live status board for every canary type you've configured — no dashboard tab required.
+      </p>
+    </section>
+
+    <section class="max-w-4xl mx-auto px-6 pb-24">
+      <div class="bg-gray-900 border border-gray-700 rounded-2xl p-8">
+        <StreamDeckMockup />
+      </div>
+      <p class="mt-4 text-center text-xs text-gray-500">
+        Simulated layout — each key shows its canary type and a live resolution trend.
       </p>
     </section>
 
