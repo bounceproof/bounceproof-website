@@ -1,0 +1,67 @@
+---
+import Layout from '../layouts/Layout.astro'
+import SiteHeader from '../components/SiteHeader.astro'
+---
+
+<Layout title="Stream Deck XL+ Integration — BounceProof.io">
+  <SiteHeader />
+
+  <main class="pt-14">
+    <section class="max-w-3xl mx-auto px-6 py-24 text-center">
+      <p class="text-green-400 font-medium text-sm uppercase tracking-wider">Integration</p>
+      <h1 class="mt-4 text-4xl sm:text-5xl font-bold text-white tracking-tight">
+        Put your canaries on your desk.
+      </h1>
+      <p class="mt-6 text-lg text-gray-400">
+        BounceProof.io ships with a native Elgato Stream Deck XL+ integration, turning your 32-key panel
+        into a live status board for every canary type you've configured — no dashboard tab required.
+      </p>
+    </section>
+
+    <section class="max-w-5xl mx-auto px-6 pb-24 grid sm:grid-cols-2 gap-8">
+      <div class="bg-gray-900 border border-gray-700 rounded-lg p-6">
+        <h2 class="text-white font-semibold text-lg">Live status, one key per canary type</h2>
+        <p class="mt-2 text-gray-400 text-sm">
+          Assign any canary type to a key on your Stream Deck XL+. The key glows green while everything is
+          healthy, amber while a canary is pending and within its timeout window, and red the instant one
+          expires — visible at a glance without switching windows.
+        </p>
+      </div>
+      <div class="bg-gray-900 border border-gray-700 rounded-lg p-6">
+        <h2 class="text-white font-semibold text-lg">The 8 dynamic dials</h2>
+        <p class="mt-2 text-gray-400 text-sm">
+          Use the XL+'s touch dials to drill into a canary type's live count, average resolution time, or
+          time-to-expiry — turn the dial to scrub through recent canary history without touching a mouse.
+        </p>
+      </div>
+      <div class="bg-gray-900 border border-gray-700 rounded-lg p-6">
+        <h2 class="text-white font-semibold text-lg">One-tap acknowledge and resolve</h2>
+        <p class="mt-2 text-gray-400 text-sm">
+          Tap a key to acknowledge an expired canary, or long-press to manually mark it resolved once
+          you've confirmed the underlying workflow actually completed — all without leaving your desk.
+        </p>
+      </div>
+      <div class="bg-gray-900 border border-gray-700 rounded-lg p-6">
+        <h2 class="text-white font-semibold text-lg">Per-profile layouts</h2>
+        <p class="mt-2 text-gray-400 text-sm">
+          Build a different key layout per on-call rotation or per environment — production canaries on
+          one Stream Deck profile, staging on another, switchable with a single folder key.
+        </p>
+      </div>
+    </section>
+
+    <section class="max-w-3xl mx-auto px-6 pb-24 text-center">
+      <h2 class="text-2xl font-semibold text-white">Requires a Stream Deck XL+</h2>
+      <p class="mt-4 text-gray-400">
+        The BounceProof plugin is built specifically for the XL+'s 32-key layout and 8 touch dials. Install
+        it from the Elgato Marketplace, point it at your self-hosted engine, and your keys will light up
+        within seconds.
+      </p>
+      <div class="mt-8">
+        <a href="#" class="px-6 py-3 rounded bg-green-600 hover:bg-green-500 text-white font-medium transition-colors inline-block">
+          Get the Plugin
+        </a>
+      </div>
+    </section>
+  </main>
+</Layout>

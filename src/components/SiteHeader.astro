@@ -1,0 +1,22 @@
+---
+const navItems = [
+  { label: 'Stream Deck XL+', href: '/streamdeck-xl' },
+]
+---
+
+<header class="fixed top-0 left-0 right-0 h-14 bg-gray-900 border-b border-gray-700 flex items-center justify-between px-6 z-50">
+  <a href="/" class="flex items-center gap-3">
+    <div class="w-8 h-8 rounded bg-green-500 flex items-center justify-center text-white text-xs font-bold">
+      BP
+    </div>
+    <span class="text-white font-semibold text-lg tracking-tight">BounceProof.io</span>
+  </a>
+
+  <nav class="flex items-center gap-6">
+    {navItems.map(item => (
+      <a href={item.href} class="text-gray-400 hover:text-white text-sm font-medium transition-colors">
+        {item.label}
+      </a>
+    ))}
+  </nav>
+</header>
