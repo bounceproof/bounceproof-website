@@ -1,0 +1,55 @@
+---
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout>
+  <header class="fixed top-0 left-0 right-0 h-14 bg-gray-900 border-b border-gray-700 flex items-center px-6 z-50">
+    <div class="flex items-center gap-3">
+      <div class="w-8 h-8 rounded bg-green-500 flex items-center justify-center text-white text-xs font-bold">
+        BP
+      </div>
+      <span class="text-white font-semibold text-lg tracking-tight">BounceProof.io</span>
+    </div>
+  </header>
+
+  <main class="pt-14">
+    <section class="max-w-3xl mx-auto px-6 py-24 text-center">
+      <h1 class="text-4xl sm:text-5xl font-bold text-white tracking-tight">
+        Know the moment your workflows go silent.
+      </h1>
+      <p class="mt-6 text-lg text-gray-400">
+        BounceProof.io is a canary-oriented workflow monitoring platform. Start a canary when a workflow
+        begins, resolve it when it completes — and get alerted the instant something never bounces back.
+      </p>
+      <div class="mt-10 flex justify-center gap-4">
+        <a href="#" class="px-6 py-3 rounded bg-green-600 hover:bg-green-500 text-white font-medium transition-colors">
+          Get Started
+        </a>
+        <a href="#" class="px-6 py-3 rounded bg-gray-800 hover:bg-gray-700 text-white font-medium transition-colors">
+          View Docs
+        </a>
+      </div>
+    </section>
+
+    <section class="max-w-5xl mx-auto px-6 pb-24 grid sm:grid-cols-3 gap-8">
+      <div class="bg-gray-900 border border-gray-700 rounded-lg p-6">
+        <h2 class="text-white font-semibold text-lg">Create</h2>
+        <p class="mt-2 text-gray-400 text-sm">
+          Start a canary from anywhere with the C# SDK when an asynchronous workflow kicks off.
+        </p>
+      </div>
+      <div class="bg-gray-900 border border-gray-700 rounded-lg p-6">
+        <h2 class="text-white font-semibold text-lg">Resolve</h2>
+        <p class="mt-2 text-gray-400 text-sm">
+          Mark the canary resolved from anywhere else once the workflow has completed successfully.
+        </p>
+      </div>
+      <div class="bg-gray-900 border border-gray-700 rounded-lg p-6">
+        <h2 class="text-white font-semibold text-lg">Get Alerted</h2>
+        <p class="mt-2 text-gray-400 text-sm">
+          If a canary doesn't resolve in time, BounceProof.io flags it immediately so you can investigate.
+        </p>
+      </div>
+    </section>
+  </main>
+</Layout>
