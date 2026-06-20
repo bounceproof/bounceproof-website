@@ -6,9 +6,62 @@ import SiteHeader from '../components/SiteHeader.astro'
 <Layout title="About — BounceProof.io">
   <SiteHeader />
   <main class="pt-14">
-    <section class="max-w-3xl mx-auto px-6 py-24 text-center">
+    <section class="max-w-3xl mx-auto px-6 pt-24 pb-12 text-center">
       <h1 class="text-4xl sm:text-5xl font-bold text-white tracking-tight">About</h1>
       <p class="mt-6 text-lg text-gray-400">More coming soon.</p>
+    </section>
+
+    <section class="max-w-3xl mx-auto px-6 pb-24">
+      <h2 class="text-3xl sm:text-4xl font-bold text-white text-center tracking-tight">How a verifier works</h2>
+      <p class="mt-4 text-gray-400 text-center">
+        By default, <span class="text-green-500 font-semibold">BounceProof</span> trusts the caller — resolving a canary
+        is as simple as telling us it's done. A verifier raises the bar: it lets you attach workflow-specific logic
+        that runs before a resolution is accepted, so "reported in" and "actually correct" aren't treated as the same thing.
+      </p>
+      <ol class="mt-10 space-y-8">
+        <li class="flex gap-4">
+          <span class="flex-none w-8 h-8 rounded-full bg-green-500/10 border border-green-500/40 text-green-500 font-semibold flex items-center justify-center">1</span>
+          <div>
+            <h3 class="text-white font-semibold text-lg">Configure it on a canary type</h3>
+            <p class="mt-1 text-gray-400 text-sm">
+              Point a canary type at a verifier endpoint you control — a small HTTP service that knows what
+              "successful" means for that specific workflow.
+            </p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <span class="flex-none w-8 h-8 rounded-full bg-green-500/10 border border-green-500/40 text-green-500 font-semibold flex items-center justify-center">2</span>
+          <div>
+            <h3 class="text-white font-semibold text-lg">Resolution triggers the call</h3>
+            <p class="mt-1 text-gray-400 text-sm">
+              When the workflow calls back to resolve its canary, BounceProof doesn't mark it healthy right away.
+              It first calls your verifier, passing along the canary's metadata — the same JSON payload you
+              attached when the canary was created.
+            </p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <span class="flex-none w-8 h-8 rounded-full bg-green-500/10 border border-green-500/40 text-green-500 font-semibold flex items-center justify-center">3</span>
+          <div>
+            <h3 class="text-white font-semibold text-lg">Your logic decides</h3>
+            <p class="mt-1 text-gray-400 text-sm">
+              The verifier checks whatever actually matters — an order total matches, a payment cleared for the
+              right amount, a file landed where it should — and returns a pass or fail.
+            </p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <span class="flex-none w-8 h-8 rounded-full bg-green-500/10 border border-green-500/40 text-green-500 font-semibold flex items-center justify-center">4</span>
+          <div>
+            <h3 class="text-white font-semibold text-lg">Pass or fail, you find out</h3>
+            <p class="mt-1 text-gray-400 text-sm">
+              A pass resolves the canary as healthy, same as if there were no verifier at all. A fail alerts you
+              immediately, even though the workflow technically reported success — catching the cases where
+              something completed but completed wrong.
+            </p>
+          </div>
+        </li>
+      </ol>
     </section>
   </main>
 </Layout>
