@@ -19,7 +19,16 @@ import SiteHeader from '../components/SiteHeader.astro'
     </section>
 
     <section class="max-w-2xl mx-auto px-6 pb-24">
-      <img src="/bp-stream-deck-xl-v3.jpg" alt="BounceProof on a Stream Deck XL+, showing canary status keys, live bar charts, and system status dials" class="w-full h-auto" />
+      <img
+        src="/bp-stream-deck-xl-v3.jpg"
+        alt="BounceProof on a Stream Deck XL+, showing canary status keys, live bar charts, and system status dials"
+        width="1072"
+        height="960"
+        class="w-full h-auto opacity-0 transition-opacity duration-300"
+        loading="eager"
+        decoding="async"
+        onload="this.classList.remove('opacity-0')"
+      />
       <p class="mt-4 text-center text-xs text-gray-500">
         Simulated layout — each key shows its canary type, with live status and trend keys underneath.
       </p>
