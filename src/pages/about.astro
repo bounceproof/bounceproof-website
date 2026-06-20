@@ -20,7 +20,7 @@ import SiteHeader from '../components/SiteHeader.astro'
         knows the workflow is late or stuck, even if every individual system along the way reported success.
       </p>
 
-      <svg viewBox="0 0 900 320" class="mt-10 w-full" role="img">
+      <svg viewBox="0 0 900 320" class="mt-10 w-full block mx-auto" role="img">
         <title>A canary created and resolved around a multi-system workflow</title>
         <desc>A workflow passes through Order Service, Payment Service, and Fulfillment Service in sequence. Order Service calls the BounceProof Engine to create a canary when the workflow starts, and Fulfillment Service calls the BounceProof Engine to resolve that same canary when the workflow finishes.</desc>
         <defs>
