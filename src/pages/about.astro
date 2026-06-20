@@ -88,50 +88,25 @@ import SiteHeader from '../components/SiteHeader.astro'
               Point a canary type at a verifier endpoint you control — a small HTTP service that knows what
               "successful" means for that specific workflow.
             </p>
-            <svg viewBox="0 0 900 360" class="mt-6 w-full" role="img">
-              <title>WooCommerce checkout flow with canary creation</title>
-              <desc>Customer places an order on your website. Your website sends the order to WooCommerce, which sets the order status to PENDING, and also creates a canary in BounceProof to track the order.</desc>
-              <defs>
-                <marker id="arrowGray1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-                  <path d="M0,0 L10,5 L0,10 z" fill="#9ca3af" />
-                </marker>
-                <marker id="arrowGreen1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-                  <path d="M0,0 L10,5 L0,10 z" fill="#22c55e" />
-                </marker>
-              </defs>
-              <g>
-                <rect x="20" y="90" width="180" height="80" rx="10" fill="#1f2937" stroke="#4b5563" stroke-width="1.5"/>
-                <text x="110" y="122" text-anchor="middle" font-size="15" font-weight="600" fill="#ffffff">Customer</text>
-                <text x="110" y="144" text-anchor="middle" font-size="12" fill="#9ca3af">places an order</text>
-              </g>
-              <line x1="200" y1="130" x2="260" y2="130" stroke="#9ca3af" stroke-width="1.5" marker-end="url(#arrowGray1)"/>
-              <g>
-                <rect x="260" y="80" width="190" height="100" rx="10" fill="#1f2937" stroke="#4b5563" stroke-width="1.5"/>
-                <text x="355" y="115" text-anchor="middle" font-size="15" font-weight="600" fill="#ffffff">Your Website</text>
-                <text x="355" y="138" text-anchor="middle" font-size="12" fill="#9ca3af">checkout submitted</text>
-                <text x="355" y="156" text-anchor="middle" font-size="12" fill="#9ca3af">order sent onward</text>
-              </g>
-              <line x1="355" y1="180" x2="355" y2="250" stroke="#22c55e" stroke-width="1.5" marker-end="url(#arrowGreen1)"/>
-              <line x1="450" y1="130" x2="510" y2="130" stroke="#9ca3af" stroke-width="1.5" marker-end="url(#arrowGray1)"/>
-              <g>
-                <rect x="510" y="80" width="190" height="100" rx="10" fill="#1f2937" stroke="#4b5563" stroke-width="1.5"/>
-                <text x="605" y="115" text-anchor="middle" font-size="15" font-weight="600" fill="#ffffff">WooCommerce</text>
-                <text x="605" y="138" text-anchor="middle" font-size="12" fill="#9ca3af">receives the order</text>
-                <text x="605" y="156" text-anchor="middle" font-size="12" fill="#9ca3af">creates order record</text>
-              </g>
-              <line x1="700" y1="130" x2="760" y2="130" stroke="#9ca3af" stroke-width="1.5" marker-end="url(#arrowGray1)"/>
-              <g>
-                <rect x="760" y="90" width="120" height="80" rx="10" fill="rgba(234,179,8,0.15)" stroke="#eab308" stroke-width="1.5"/>
-                <text x="820" y="122" text-anchor="middle" font-size="13" font-weight="600" fill="#facc15">Status set</text>
-                <text x="820" y="146" text-anchor="middle" font-size="14" font-weight="700" fill="#facc15">PENDING</text>
-              </g>
-              <g>
-                <rect x="260" y="250" width="190" height="90" rx="10" fill="rgba(34,197,94,0.14)" stroke="#22c55e" stroke-width="1.5"/>
-                <text x="355" y="280" text-anchor="middle" font-size="14" font-weight="600" fill="#4ade80">BounceProof</text>
-                <text x="355" y="302" text-anchor="middle" font-size="12" fill="#9ca3af">canary created</text>
-                <text x="355" y="320" text-anchor="middle" font-size="11" fill="#9ca3af">tracking this order</text>
-              </g>
-              <text x="450" y="40" text-anchor="middle" font-size="12" fill="#9ca3af">Canary creation happens alongside the order request — not after WooCommerce responds</text>
+            <svg viewBox="0 0 700 360" class="mt-6 w-full max-w-xl block mx-auto" role="img">
+              <title>Canary editor page showing verifier configuration</title>
+              <desc>A canary editor form for the canary type "order-completion-webhook" with a "Use a Verifier" checkbox checked, revealing a URL field set to https://api.mysite.com/canary-verify/order-completion-webhook</desc>
+              <rect x="0" y="0" width="700" height="360" rx="14" fill="#111827" stroke="#374151" stroke-width="1.5"/>
+              <text x="32" y="44" font-size="18" font-weight="700" fill="#ffffff">Edit Canary Type</text>
+              <line x1="32" y1="58" x2="668" y2="58" stroke="#374151" stroke-width="1"/>
+              <text x="32" y="92" font-size="12" font-weight="600" fill="#9ca3af">CANARY TYPE</text>
+              <rect x="32" y="100" width="636" height="40" rx="6" fill="#1f2937" stroke="#4b5563" stroke-width="1.5"/>
+              <text x="46" y="125" font-size="15" fill="#ffffff" font-family="monospace">order-completion-webhook</text>
+              <text x="32" y="166" font-size="12" font-weight="600" fill="#9ca3af">TIMEOUT</text>
+              <rect x="32" y="174" width="636" height="40" rx="6" fill="#1f2937" stroke="#4b5563" stroke-width="1.5"/>
+              <text x="46" y="199" font-size="15" fill="#ffffff">5 minutes</text>
+              <rect x="32" y="234" width="20" height="20" rx="4" fill="#22c55e"/>
+              <path d="M36 244 L41 249 L48 238" stroke="#0b1f12" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <text x="62" y="249" font-size="15" font-weight="600" fill="#ffffff">Use a Verifier</text>
+              <text x="32" y="282" font-size="12" font-weight="600" fill="#9ca3af">VERIFIER URL</text>
+              <rect x="32" y="290" width="636" height="40" rx="6" fill="#1f2937" stroke="#22c55e" stroke-width="1.5"/>
+              <text x="46" y="315" font-size="13" fill="#ffffff" font-family="monospace">https://api.mysite.com/canary-verify/order-completion-webhook</text>
+              <text x="32" y="345" font-size="11" fill="#9ca3af">BounceProof will POST the canary's metadata to this URL before resolving it</text>
             </svg>
           </div>
         </li>
