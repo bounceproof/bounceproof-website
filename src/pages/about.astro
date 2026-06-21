@@ -20,7 +20,7 @@ import SiteHeader from '../components/SiteHeader.astro'
         knows the workflow is late or stuck, even if every individual system along the way reported success.
       </p>
 
-      <svg viewBox="0 0 960 660" class="mt-10 w-full block mx-auto" role="img">
+      <svg viewBox="0 0 940 400" class="mt-10 w-full block mx-auto" role="img">
         <title>A canary created and resolved around a multi-system workflow</title>
         <desc>A workflow passes through Order Service, Payment Service, and Fulfillment Service in sequence. Order Service calls the BounceProof Engine to create a canary when the workflow starts, and Fulfillment Service calls the BounceProof Engine to resolve that same canary when the workflow finishes.</desc>
         <defs>
@@ -32,47 +32,43 @@ import SiteHeader from '../components/SiteHeader.astro'
           </marker>
         </defs>
 
-        <text x="470" y="18" text-anchor="middle" font-size="18" fill="#9ca3af">One canary tracks the whole workflow, regardless of how many systems it touches</text>
+        <text x="470" y="20" text-anchor="middle" font-size="15" fill="#9ca3af">One canary tracks the whole workflow, regardless of how many systems it touches</text>
 
-        <!-- Order Service -->
+        <!-- Workflow systems -->
         <g>
-          <rect x="20" y="40" width="700" height="110" rx="10" fill="#1f2937" stroke="#4b5563" stroke-width="1.5"/>
-          <text x="370" y="85" text-anchor="middle" font-size="28" font-weight="600" fill="#ffffff">Order Service</text>
-          <text x="370" y="118" text-anchor="middle" font-size="20" fill="#9ca3af">workflow starts</text>
+          <rect x="20" y="45" width="260" height="100" rx="10" fill="#1f2937" stroke="#4b5563" stroke-width="1.5"/>
+          <text x="150" y="87" text-anchor="middle" font-size="19" font-weight="600" fill="#ffffff">Order Service</text>
+          <text x="150" y="112" text-anchor="middle" font-size="15" fill="#9ca3af">workflow starts</text>
         </g>
-        <line x1="370" y1="150" x2="370" y2="190" stroke="#9ca3af" stroke-width="2.5" marker-end="url(#arrowGray3)"/>
-
-        <!-- Payment Service -->
+        <line x1="280" y1="95" x2="330" y2="95" stroke="#9ca3af" stroke-width="2" marker-end="url(#arrowGray3)"/>
         <g>
-          <rect x="20" y="190" width="700" height="110" rx="10" fill="#1f2937" stroke="#4b5563" stroke-width="1.5"/>
-          <text x="370" y="235" text-anchor="middle" font-size="28" font-weight="600" fill="#ffffff">Payment Service</text>
-          <text x="370" y="268" text-anchor="middle" font-size="20" fill="#9ca3af">charge processed</text>
+          <rect x="330" y="45" width="260" height="100" rx="10" fill="#1f2937" stroke="#4b5563" stroke-width="1.5"/>
+          <text x="460" y="87" text-anchor="middle" font-size="19" font-weight="600" fill="#ffffff">Payment Service</text>
+          <text x="460" y="112" text-anchor="middle" font-size="15" fill="#9ca3af">charge processed</text>
         </g>
-        <line x1="370" y1="300" x2="370" y2="340" stroke="#9ca3af" stroke-width="2.5" marker-end="url(#arrowGray3)"/>
-
-        <!-- Fulfillment Service -->
+        <line x1="590" y1="95" x2="640" y2="95" stroke="#9ca3af" stroke-width="2" marker-end="url(#arrowGray3)"/>
         <g>
-          <rect x="20" y="340" width="700" height="110" rx="10" fill="#1f2937" stroke="#4b5563" stroke-width="1.5"/>
-          <text x="370" y="385" text-anchor="middle" font-size="28" font-weight="600" fill="#ffffff">Fulfillment Service</text>
-          <text x="370" y="418" text-anchor="middle" font-size="20" fill="#9ca3af">workflow finishes</text>
+          <rect x="640" y="45" width="260" height="100" rx="10" fill="#1f2937" stroke="#4b5563" stroke-width="1.5"/>
+          <text x="770" y="87" text-anchor="middle" font-size="19" font-weight="600" fill="#ffffff">Fulfillment Service</text>
+          <text x="770" y="112" text-anchor="middle" font-size="15" fill="#9ca3af">workflow finishes</text>
         </g>
 
         <!-- BounceProof Engine -->
         <g>
-          <rect x="20" y="510" width="700" height="120" rx="10" fill="#1f2937" stroke="#22c55e" stroke-width="1.5"/>
-          <text x="370" y="558" text-anchor="middle" font-size="28" font-weight="600" fill="#4ade80">BounceProof Engine</text>
-          <text x="370" y="592" text-anchor="middle" font-size="20" fill="#9ca3af">tracks the canary</text>
+          <rect x="330" y="280" width="280" height="100" rx="10" fill="#1f2937" stroke="#22c55e" stroke-width="1.5"/>
+          <text x="470" y="322" text-anchor="middle" font-size="19" font-weight="600" fill="#4ade80">BounceProof Engine</text>
+          <text x="470" y="348" text-anchor="middle" font-size="15" fill="#9ca3af">tracks the canary</text>
         </g>
 
         <!-- Create call: Order Service -> Engine -->
-        <path d="M 720 95 L 860 95 L 860 545 L 720 545" fill="none" stroke="#22c55e" stroke-width="2.5" marker-end="url(#arrowGreen3)"/>
-        <rect x="790" y="276" width="150" height="32" rx="6" fill="#0f1f17" stroke="#22c55e" stroke-width="1"/>
-        <text x="865" y="298" text-anchor="middle" font-size="18" font-weight="600" fill="#ffffff">create canary</text>
+        <path d="M 150 145 L 150 205 L 410 205 L 410 280" fill="none" stroke="#22c55e" stroke-width="2" marker-end="url(#arrowGreen3)"/>
+        <rect x="235" y="189" width="180" height="32" rx="6" fill="#0f1f17" stroke="#22c55e" stroke-width="1"/>
+        <text x="325" y="211" text-anchor="middle" font-size="15" font-weight="600" fill="#ffffff">create canary</text>
 
         <!-- Resolve call: Fulfillment Service -> Engine -->
-        <path d="M 720 395 L 800 395 L 800 575 L 720 575" fill="none" stroke="#22c55e" stroke-width="2.5" marker-end="url(#arrowGreen3)"/>
-        <rect x="735" y="460" width="150" height="32" rx="6" fill="#0f1f17" stroke="#22c55e" stroke-width="1"/>
-        <text x="810" y="482" text-anchor="middle" font-size="18" font-weight="600" fill="#ffffff">resolve canary</text>
+        <path d="M 770 145 L 770 235 L 530 235 L 530 280" fill="none" stroke="#22c55e" stroke-width="2" marker-end="url(#arrowGreen3)"/>
+        <rect x="585" y="219" width="180" height="32" rx="6" fill="#0f1f17" stroke="#22c55e" stroke-width="1"/>
+        <text x="675" y="241" text-anchor="middle" font-size="15" font-weight="600" fill="#ffffff">resolve canary</text>
       </svg>
     </section>
 
