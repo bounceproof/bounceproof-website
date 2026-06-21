@@ -135,18 +135,12 @@ import SiteHeader from '../components/SiteHeader.astro'
               The verifier checks whatever actually matters — an order total matches, a payment cleared for the
               right amount, a file landed where it should — and returns a pass or fail.
             </p>
-            <svg viewBox="0 0 1000 360" class="mt-6 w-full" role="img">
-              <title>Canary expiry triggers verifier call, which checks WooCommerce and returns Extend or Trigger</title>
-              <desc>After 5 minutes with no resolution, the canary expires. BounceProof's engine calls the verifier on the customer's internal API. The verifier calls the WooCommerce API to get the order status, then returns either an Extend verdict, telling BounceProof to give the order more time, or a Trigger verdict, telling BounceProof to fire an alert.</desc>
+            <svg viewBox="0 0 1000 230" class="mt-6 w-full" role="img">
+              <title>Canary expiry triggers a verifier call, which checks WooCommerce</title>
+              <desc>After 5 minutes with no resolution, the canary expires. BounceProof's engine calls the verifier on the customer's internal API, and the verifier calls the WooCommerce API to get the order status before any verdict is decided.</desc>
               <defs>
                 <marker id="arrowGray2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
                   <path d="M0,0 L10,5 L0,10 z" fill="#9ca3af" />
-                </marker>
-                <marker id="arrowBlue2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-                  <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
-                </marker>
-                <marker id="arrowRed2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-                  <path d="M0,0 L10,5 L0,10 z" fill="#ef4444" />
                 </marker>
               </defs>
               <g>
@@ -188,13 +182,7 @@ import SiteHeader from '../components/SiteHeader.astro'
                 <text x="940" y="127" text-anchor="middle" font-size="10" fill="#9ca3af">order status</text>
                 <text x="940" y="143" text-anchor="middle" font-size="10" fill="#9ca3af">lookup</text>
               </g>
-              <path d="M 745 175 L 745 220 L 547 220 L 547 170" fill="none" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrowBlue2)"/>
-              <rect x="595" y="226" width="100" height="22" rx="5" fill="rgba(59,130,246,0.18)" stroke="#3b82f6" stroke-width="1"/>
-              <text x="645" y="241" text-anchor="middle" font-size="12" font-weight="700" fill="#60a5fa">"Extend"</text>
-              <path d="M 765 175 L 765 280 L 527 280 L 527 170" fill="none" stroke="#ef4444" stroke-width="2" marker-end="url(#arrowRed2)"/>
-              <rect x="585" y="286" width="100" height="22" rx="5" fill="rgba(239,68,68,0.18)" stroke="#ef4444" stroke-width="1"/>
-              <text x="635" y="301" text-anchor="middle" font-size="12" font-weight="700" fill="#f87171">"Trigger"</text>
-              <text x="500" y="335" text-anchor="middle" font-size="12" fill="#9ca3af">"Extend" pushes the deadline out; "Trigger" tells BounceProof to fire the alert now</text>
+              <text x="500" y="210" text-anchor="middle" font-size="12" fill="#9ca3af">BounceProof calls the verifier, which checks WooCommerce before any verdict is decided</text>
             </svg>
           </div>
         </li>
