@@ -332,9 +332,9 @@ import SiteHeader from '../components/SiteHeader.astro'
         </g>
 
         <!-- Create call: Order Service -> Engine -->
-        <path d="M 150 145 L 150 210 L 410 210 L 410 280" fill="none" stroke="#22c55e" stroke-width="2" marker-end="url(#arrowGreen5)"/>
-        <rect x="190" y="170" width="180" height="32" rx="6" fill="#0f1f17" stroke="#22c55e" stroke-width="1"/>
-        <text x="280" y="192" text-anchor="middle" font-size="15" font-weight="600" fill="#ffffff">create canary</text>
+        <path d="M 150 145 L 150 210 L 370 210 L 370 280" fill="none" stroke="#22c55e" stroke-width="2" marker-end="url(#arrowGreen5)"/>
+        <rect x="170" y="170" width="180" height="32" rx="6" fill="#0f1f17" stroke="#22c55e" stroke-width="1"/>
+        <text x="260" y="192" text-anchor="middle" font-size="15" font-weight="600" fill="#ffffff">create canary</text>
 
         <!-- Checkpoint: Payment Service -> Engine -->
         <line x1="460" y1="145" x2="460" y2="280" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrowBlue5)"/>
@@ -342,10 +342,35 @@ import SiteHeader from '../components/SiteHeader.astro'
         <text x="460" y="217" text-anchor="middle" font-size="15" font-weight="600" fill="#ffffff">checkpoint</text>
 
         <!-- Resolve call: Fulfillment Service -> Engine -->
-        <path d="M 770 145 L 770 210 L 530 210 L 530 280" fill="none" stroke="#22c55e" stroke-width="2" marker-end="url(#arrowGreen5)"/>
-        <rect x="560" y="170" width="180" height="32" rx="6" fill="#0f1f17" stroke="#22c55e" stroke-width="1"/>
-        <text x="650" y="192" text-anchor="middle" font-size="15" font-weight="600" fill="#ffffff">resolve canary</text>
+        <path d="M 770 145 L 770 210 L 560 210 L 560 280" fill="none" stroke="#22c55e" stroke-width="2" marker-end="url(#arrowGreen5)"/>
+        <rect x="585" y="170" width="180" height="32" rx="6" fill="#0f1f17" stroke="#22c55e" stroke-width="1"/>
+        <text x="675" y="192" text-anchor="middle" font-size="15" font-weight="600" fill="#ffffff">resolve canary</text>
       </svg>
+
+      <div class="mt-10 grid sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        <div>
+          <h3 class="text-white font-semibold text-lg">Optional, anywhere</h3>
+          <p class="mt-2 text-gray-400 text-sm">
+            Any system in the workflow can record a checkpoint, not just the one that created or resolves the
+            canary. A canary can have zero, one, or many checkpoints over its lifetime.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-white font-semibold text-lg">A timeline, not a status</h3>
+          <p class="mt-2 text-gray-400 text-sm">
+            Checkpoints are additive — each one is a timestamped stage name with optional metadata, stored
+            alongside the canary. <span class="text-green-500 font-semibold">BounceProof</span> never overwrites or
+            collapses them, so you get the full sequence of stages a workflow actually reached.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-white font-semibold text-lg">Pinpoints where it stalled</h3>
+          <p class="mt-2 text-gray-400 text-sm">
+            When a canary expires, its checkpoint history tells you exactly how far the workflow got before it got
+            stuck — the difference between "it failed" and "it failed after payment cleared, before fulfillment."
+          </p>
+        </div>
+      </div>
     </section>
   </main>
 </Layout>
