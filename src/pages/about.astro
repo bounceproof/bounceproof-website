@@ -125,22 +125,15 @@ import SiteHeader from '../components/SiteHeader.astro'
               It first calls your verifier, passing along the canary's metadata — the same JSON payload you
               attached when the canary was created.
             </p>
-          </div>
-        </li>
-        <li class="flex gap-4">
-          <span class="flex-none w-8 h-8 rounded-full bg-green-500/10 border border-green-500/40 text-green-500 font-semibold flex items-center justify-center">3</span>
-          <div>
-            <h3 class="text-white font-semibold text-lg">Your logic decides</h3>
-            <p class="mt-1 text-gray-400 text-sm">
-              The verifier checks whatever actually matters — an order total matches, a payment cleared for the
-              right amount, a file landed where it should — and returns a pass or fail.
-            </p>
-            <svg viewBox="0 0 1000 230" class="mt-6 w-full" role="img">
-              <title>Canary expiry triggers a verifier call, which checks WooCommerce</title>
-              <desc>After 5 minutes with no resolution, the canary expires. BounceProof's engine calls the verifier on the customer's internal API, and the verifier calls the WooCommerce API to get the order status before any verdict is decided.</desc>
+            <svg viewBox="0 0 1000 300" class="mt-6 w-full" role="img">
+              <title>Canary expiry triggers a verifier call, which checks WooCommerce and responds</title>
+              <desc>After 5 minutes with no resolution, the canary expires. BounceProof's engine calls the verifier on the customer's internal API, and the verifier calls the WooCommerce API to get the order status before sending a response back to the engine.</desc>
               <defs>
                 <marker id="arrowGray2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
                   <path d="M0,0 L10,5 L0,10 z" fill="#9ca3af" />
+                </marker>
+                <marker id="arrowGreen2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M0,0 L10,5 L0,10 z" fill="#22c55e" />
                 </marker>
               </defs>
               <g>
@@ -182,8 +175,21 @@ import SiteHeader from '../components/SiteHeader.astro'
                 <text x="940" y="127" text-anchor="middle" font-size="10" fill="#9ca3af">order status</text>
                 <text x="940" y="143" text-anchor="middle" font-size="10" fill="#9ca3af">lookup</text>
               </g>
-              <text x="500" y="210" text-anchor="middle" font-size="12" fill="#9ca3af">BounceProof calls the verifier, which checks WooCommerce before any verdict is decided</text>
+              <path d="M 745 175 L 745 220 L 547 220 L 547 170" fill="none" stroke="#22c55e" stroke-width="2" marker-end="url(#arrowGreen2)"/>
+              <rect x="595" y="226" width="100" height="22" rx="5" fill="#0f1f17" stroke="#22c55e" stroke-width="1"/>
+              <text x="645" y="241" text-anchor="middle" font-size="12" font-weight="600" fill="#ffffff">response</text>
+              <text x="500" y="280" text-anchor="middle" font-size="12" fill="#9ca3af">BounceProof calls the verifier, which checks WooCommerce, then responds back to the engine</text>
             </svg>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <span class="flex-none w-8 h-8 rounded-full bg-green-500/10 border border-green-500/40 text-green-500 font-semibold flex items-center justify-center">3</span>
+          <div>
+            <h3 class="text-white font-semibold text-lg">Your logic decides</h3>
+            <p class="mt-1 text-gray-400 text-sm">
+              The verifier checks whatever actually matters — an order total matches, a payment cleared for the
+              right amount, a file landed where it should — and returns a pass or fail.
+            </p>
           </div>
         </li>
         <li class="flex gap-4">
