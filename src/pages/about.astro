@@ -278,5 +278,74 @@ import SiteHeader from '../components/SiteHeader.astro'
         </li>
       </ol>
     </section>
+
+    <section class="max-w-5xl mx-auto px-6 pb-24">
+      <h2 class="text-3xl sm:text-4xl font-bold text-white text-center tracking-tight">Checkpoints</h2>
+      <p class="mt-4 text-gray-400 text-center max-w-3xl mx-auto">
+        A canary's deadline doesn't have to be a black box in between creation and resolution. Any system along the
+        way can record a checkpoint — a named stage, with optional metadata — without resetting the canary's
+        expiry. It's a lightweight progress marker, not a pulse: it tells you how far a workflow got, even if it
+        never finishes.
+      </p>
+
+      <svg viewBox="0 0 940 400" class="mt-10 w-full block mx-auto" role="img">
+        <title>A checkpoint recorded mid-workflow alongside canary creation and resolution</title>
+        <desc>A workflow passes through Order Service, Payment Service, and Fulfillment Service in sequence. Order Service creates a canary when the workflow starts and Fulfillment Service resolves it when the workflow finishes, while Payment Service records a checkpoint with the BounceProof Engine partway through, without affecting the canary's expiry.</desc>
+        <defs>
+          <marker id="arrowGray5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#9ca3af" />
+          </marker>
+          <marker id="arrowGreen5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#22c55e" />
+          </marker>
+          <marker id="arrowBlue5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6" />
+          </marker>
+        </defs>
+
+        <text x="470" y="20" text-anchor="middle" font-size="15" fill="#9ca3af">A checkpoint records progress without resetting the deadline</text>
+
+        <!-- Workflow systems -->
+        <g>
+          <rect x="20" y="45" width="260" height="100" rx="10" fill="#1f2937" stroke="#4b5563" stroke-width="1.5"/>
+          <text x="150" y="87" text-anchor="middle" font-size="19" font-weight="600" fill="#ffffff">Order Service</text>
+          <text x="150" y="112" text-anchor="middle" font-size="15" fill="#9ca3af">workflow starts</text>
+        </g>
+        <line x1="280" y1="95" x2="330" y2="95" stroke="#9ca3af" stroke-width="2" marker-end="url(#arrowGray5)"/>
+        <g>
+          <rect x="330" y="45" width="260" height="100" rx="10" fill="#1f2937" stroke="#4b5563" stroke-width="1.5"/>
+          <text x="460" y="87" text-anchor="middle" font-size="19" font-weight="600" fill="#ffffff">Payment Service</text>
+          <text x="460" y="112" text-anchor="middle" font-size="15" fill="#9ca3af">charge processed</text>
+        </g>
+        <line x1="590" y1="95" x2="640" y2="95" stroke="#9ca3af" stroke-width="2" marker-end="url(#arrowGray5)"/>
+        <g>
+          <rect x="640" y="45" width="260" height="100" rx="10" fill="#1f2937" stroke="#4b5563" stroke-width="1.5"/>
+          <text x="770" y="87" text-anchor="middle" font-size="19" font-weight="600" fill="#ffffff">Fulfillment Service</text>
+          <text x="770" y="112" text-anchor="middle" font-size="15" fill="#9ca3af">workflow finishes</text>
+        </g>
+
+        <!-- BounceProof Engine -->
+        <g>
+          <rect x="330" y="280" width="280" height="100" rx="10" fill="#1f2937" stroke="#22c55e" stroke-width="1.5"/>
+          <text x="470" y="322" text-anchor="middle" font-size="19" font-weight="600" fill="#4ade80">BounceProof Engine</text>
+          <text x="470" y="348" text-anchor="middle" font-size="15" fill="#9ca3af">tracks the canary</text>
+        </g>
+
+        <!-- Create call: Order Service -> Engine -->
+        <path d="M 150 145 L 150 210 L 410 210 L 410 280" fill="none" stroke="#22c55e" stroke-width="2" marker-end="url(#arrowGreen5)"/>
+        <rect x="190" y="170" width="180" height="32" rx="6" fill="#0f1f17" stroke="#22c55e" stroke-width="1"/>
+        <text x="280" y="192" text-anchor="middle" font-size="15" font-weight="600" fill="#ffffff">create canary</text>
+
+        <!-- Checkpoint: Payment Service -> Engine -->
+        <line x1="460" y1="145" x2="460" y2="280" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrowBlue5)"/>
+        <rect x="392" y="195" width="136" height="32" rx="6" fill="#0f1a2e" stroke="#3b82f6" stroke-width="1"/>
+        <text x="460" y="217" text-anchor="middle" font-size="15" font-weight="600" fill="#ffffff">checkpoint</text>
+
+        <!-- Resolve call: Fulfillment Service -> Engine -->
+        <path d="M 770 145 L 770 210 L 530 210 L 530 280" fill="none" stroke="#22c55e" stroke-width="2" marker-end="url(#arrowGreen5)"/>
+        <rect x="560" y="170" width="180" height="32" rx="6" fill="#0f1f17" stroke="#22c55e" stroke-width="1"/>
+        <text x="650" y="192" text-anchor="middle" font-size="15" font-weight="600" fill="#ffffff">resolve canary</text>
+      </svg>
+    </section>
   </main>
 </Layout>
