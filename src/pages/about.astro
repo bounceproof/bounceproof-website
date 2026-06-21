@@ -138,48 +138,48 @@ import SiteHeader from '../components/SiteHeader.astro'
               </defs>
 
               <g>
-                <rect x="20" y="20" width="700" height="110" rx="10" fill="rgba(234,179,8,0.14)" stroke="#eab308" stroke-width="1.5"/>
-                <text x="370" y="65" text-anchor="middle" font-size="26" font-weight="600" fill="#facc15">Canary: PENDING</text>
-                <text x="370" y="98" text-anchor="middle" font-size="20" fill="#9ca3af">no resolution yet</text>
+                <rect x="130" y="20" width="600" height="110" rx="10" fill="rgba(234,179,8,0.14)" stroke="#eab308" stroke-width="1.5"/>
+                <text x="430" y="65" text-anchor="middle" font-size="26" font-weight="600" fill="#facc15">Canary: PENDING</text>
+                <text x="430" y="98" text-anchor="middle" font-size="20" fill="#9ca3af">no resolution yet</text>
               </g>
-              <line x1="370" y1="130" x2="370" y2="180" stroke="#9ca3af" stroke-width="2.5" marker-end="url(#arrowGray2)"/>
-              <text x="400" y="160" font-size="18" fill="#9ca3af">5 min</text>
+              <line x1="430" y1="130" x2="430" y2="180" stroke="#9ca3af" stroke-width="2.5" marker-end="url(#arrowGray2)"/>
+              <text x="460" y="160" font-size="18" fill="#9ca3af">5 min</text>
 
               <g>
-                <rect x="20" y="180" width="700" height="110" rx="10" fill="rgba(239,68,68,0.14)" stroke="#ef4444" stroke-width="1.5"/>
-                <text x="370" y="225" text-anchor="middle" font-size="26" font-weight="600" fill="#f87171">Canary: EXPIRED</text>
-                <text x="370" y="258" text-anchor="middle" font-size="20" fill="#9ca3af">timeout reached</text>
+                <rect x="130" y="180" width="600" height="110" rx="10" fill="rgba(239,68,68,0.14)" stroke="#ef4444" stroke-width="1.5"/>
+                <text x="430" y="225" text-anchor="middle" font-size="26" font-weight="600" fill="#f87171">Canary: EXPIRED</text>
+                <text x="430" y="258" text-anchor="middle" font-size="20" fill="#9ca3af">timeout reached</text>
               </g>
-              <line x1="370" y1="290" x2="370" y2="340" stroke="#9ca3af" stroke-width="2.5" marker-end="url(#arrowGray2)"/>
+              <line x1="430" y1="290" x2="430" y2="340" stroke="#9ca3af" stroke-width="2.5" marker-end="url(#arrowGray2)"/>
 
               <g>
-                <rect x="20" y="340" width="700" height="120" rx="10" fill="#1f2937" stroke="#22c55e" stroke-width="1.5"/>
-                <text x="370" y="388" text-anchor="middle" font-size="26" font-weight="600" fill="#4ade80">BounceProof Engine</text>
-                <text x="370" y="422" text-anchor="middle" font-size="20" fill="#9ca3af">expiry detected, calls verifier</text>
+                <rect x="130" y="340" width="600" height="120" rx="10" fill="#1f2937" stroke="#22c55e" stroke-width="1.5"/>
+                <text x="430" y="388" text-anchor="middle" font-size="26" font-weight="600" fill="#4ade80">BounceProof Engine</text>
+                <text x="430" y="422" text-anchor="middle" font-size="20" fill="#9ca3af">expiry detected, calls verifier</text>
               </g>
-              <line x1="370" y1="460" x2="370" y2="510" stroke="#9ca3af" stroke-width="2.5" marker-end="url(#arrowGray2)"/>
-              <text x="400" y="490" font-size="18" fill="#9ca3af">calls verifier</text>
+              <line x1="430" y1="460" x2="430" y2="510" stroke="#9ca3af" stroke-width="2.5" marker-end="url(#arrowGray2)"/>
+              <text x="460" y="490" font-size="18" fill="#9ca3af">calls verifier</text>
 
               <g>
-                <rect x="20" y="510" width="700" height="120" rx="10" fill="#1f2937" stroke="#4b5563" stroke-width="1.5"/>
-                <text x="370" y="558" text-anchor="middle" font-size="24" font-weight="600" fill="#ffffff">Verifier (your internal API)</text>
-                <text x="370" y="592" text-anchor="middle" font-size="20" fill="#9ca3af">asked to confirm the order</text>
+                <rect x="130" y="510" width="600" height="120" rx="10" fill="#1f2937" stroke="#4b5563" stroke-width="1.5"/>
+                <text x="430" y="558" text-anchor="middle" font-size="24" font-weight="600" fill="#ffffff">Verifier (your internal API)</text>
+                <text x="430" y="592" text-anchor="middle" font-size="20" fill="#9ca3af">asked to confirm the order</text>
               </g>
-              <line x1="370" y1="630" x2="370" y2="680" stroke="#9ca3af" stroke-width="2.5" marker-end="url(#arrowGray2)"/>
-              <text x="400" y="660" font-size="18" fill="#9ca3af">checks WooCommerce</text>
+              <line x1="430" y1="630" x2="430" y2="680" stroke="#9ca3af" stroke-width="2.5" marker-end="url(#arrowGray2)"/>
+              <text x="460" y="660" font-size="18" fill="#9ca3af">checks WooCommerce</text>
 
               <g>
-                <rect x="20" y="680" width="700" height="110" rx="10" fill="#1f2937" stroke="#4b5563" stroke-width="1.5"/>
-                <text x="370" y="725" text-anchor="middle" font-size="24" font-weight="600" fill="#ffffff">WooCommerce API</text>
-                <text x="370" y="758" text-anchor="middle" font-size="20" fill="#9ca3af">order status lookup</text>
+                <rect x="130" y="680" width="600" height="110" rx="10" fill="#1f2937" stroke="#4b5563" stroke-width="1.5"/>
+                <text x="430" y="725" text-anchor="middle" font-size="24" font-weight="600" fill="#ffffff">WooCommerce API</text>
+                <text x="430" y="758" text-anchor="middle" font-size="20" fill="#9ca3af">order status lookup</text>
               </g>
 
               <!-- Response: Verifier -> Engine -->
-              <path d="M 720 565 L 800 565 L 800 400 L 720 400" fill="none" stroke="#22c55e" stroke-width="2.5" marker-end="url(#arrowGreen2)"/>
-              <rect x="745" y="466" width="150" height="32" rx="6" fill="#0f1f17" stroke="#22c55e" stroke-width="1"/>
-              <text x="820" y="488" text-anchor="middle" font-size="18" font-weight="600" fill="#ffffff">response</text>
+              <path d="M 730 565 L 810 565 L 810 400 L 730 400" fill="none" stroke="#22c55e" stroke-width="2.5" marker-end="url(#arrowGreen2)"/>
+              <rect x="755" y="466" width="150" height="32" rx="6" fill="#0f1f17" stroke="#22c55e" stroke-width="1"/>
+              <text x="830" y="488" text-anchor="middle" font-size="18" font-weight="600" fill="#ffffff">response</text>
 
-              <text x="460" y="820" text-anchor="middle" font-size="18" fill="#9ca3af">BounceProof calls the verifier, which checks WooCommerce, then responds back to the engine</text>
+              <text x="430" y="820" text-anchor="middle" font-size="18" fill="#9ca3af">BounceProof calls the verifier, which checks WooCommerce, then responds back to the engine</text>
             </svg>
           </div>
         </li>
