@@ -3,11 +3,11 @@ import Layout from '../layouts/Layout.astro'
 import SiteHeader from '../components/SiteHeader.astro'
 ---
 
-<Layout title="About — BounceProof.io">
+<Layout title="About — CrashGuard.io">
   <SiteHeader />
   <main class="pt-14">
     <section class="max-w-3xl mx-auto px-6 pt-24 pb-12 text-center">
-      <h1 class="text-4xl sm:text-5xl font-bold tracking-tight"><span class="text-green-500">BounceProof</span><span class="text-white">.io</span></h1>
+      <h1 class="text-4xl sm:text-5xl font-bold tracking-tight"><span class="text-green-500">CrashGuard</span><span class="text-white">.io</span></h1>
       <p class="mt-6 text-lg text-gray-400">Asynchronous workflow monitoring</p>
     </section>
 
@@ -16,13 +16,13 @@ import SiteHeader from '../components/SiteHeader.astro'
       <p class="mt-4 text-gray-400 text-center max-w-3xl mx-auto">
         A canary is a deadline you set on a workflow instead of a log line you hope to see. You start one the moment
         a workflow kicks off, and resolve it the moment that workflow actually finishes — no matter how many systems
-        it passes through in between. If the canary doesn't resolve before its deadline, <span class="text-green-500 font-semibold">BounceProof</span>
+        it passes through in between. If the canary doesn't resolve before its deadline, <span class="text-green-500 font-semibold">CrashGuard</span>
         knows the workflow is late or stuck, even if every individual system along the way reported success.
       </p>
 
       <svg viewBox="0 0 940 400" class="mt-10 w-full block mx-auto" role="img">
         <title>A canary created and resolved around a multi-system workflow</title>
-        <desc>A workflow passes through Order Service, Payment Service, and Fulfillment Service in sequence. Order Service calls the BounceProof Engine to create a canary when the workflow starts, and Fulfillment Service calls the BounceProof Engine to resolve that same canary when the workflow finishes.</desc>
+        <desc>A workflow passes through Order Service, Payment Service, and Fulfillment Service in sequence. Order Service calls the CrashGuard Engine to create a canary when the workflow starts, and Fulfillment Service calls the CrashGuard Engine to resolve that same canary when the workflow finishes.</desc>
         <defs>
           <marker id="arrowGray3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
             <path d="M0,0 L10,5 L0,10 z" fill="#9ca3af" />
@@ -53,10 +53,10 @@ import SiteHeader from '../components/SiteHeader.astro'
           <text x="770" y="112" text-anchor="middle" font-size="15" fill="#9ca3af">workflow finishes</text>
         </g>
 
-        <!-- BounceProof Engine -->
+        <!-- CrashGuard Engine -->
         <g>
           <rect x="330" y="280" width="280" height="100" rx="10" fill="#1f2937" stroke="#22c55e" stroke-width="1.5"/>
-          <text x="470" y="322" text-anchor="middle" font-size="19" font-weight="600" fill="#4ade80">BounceProof Engine</text>
+          <text x="470" y="322" text-anchor="middle" font-size="19" font-weight="600" fill="#4ade80">CrashGuard Engine</text>
           <text x="470" y="348" text-anchor="middle" font-size="15" fill="#9ca3af">tracks the canary</text>
         </g>
 
@@ -75,7 +75,7 @@ import SiteHeader from '../components/SiteHeader.astro'
     <section class="max-w-5xl mx-auto px-6 pb-24">
       <h2 class="text-3xl sm:text-4xl font-bold text-white text-center tracking-tight">How a verifier works</h2>
       <p class="mt-4 text-gray-400 text-center max-w-3xl mx-auto">
-        By default, <span class="text-green-500 font-semibold">BounceProof</span> trusts the caller — resolving a canary
+        By default, <span class="text-green-500 font-semibold">CrashGuard</span> trusts the caller — resolving a canary
         is as simple as telling us it's done. A verifier raises the bar: it lets you attach workflow-specific logic
         that runs before a resolution is accepted, so "reported in" and "actually correct" aren't treated as the same thing.
       </p>
@@ -112,7 +112,7 @@ import SiteHeader from '../components/SiteHeader.astro'
               <text x="32" y="368" font-size="16" font-weight="600" fill="#9ca3af">VERIFIER URL</text>
               <rect x="32" y="376" width="736" height="56" rx="8" fill="#1f2937" stroke="#22c55e" stroke-width="1.5"/>
               <text x="48" y="412" font-size="16" fill="#ffffff" font-family="monospace">https://api.mysite.com/canary-verify/order-completion-webhook</text>
-              <text x="32" y="464" font-size="16" fill="#9ca3af">BounceProof will POST the canary's metadata to this URL before resolving it</text>
+              <text x="32" y="464" font-size="16" fill="#9ca3af">CrashGuard will POST the canary's metadata to this URL before resolving it</text>
             </svg>
           </div>
         </li>
@@ -121,13 +121,13 @@ import SiteHeader from '../components/SiteHeader.astro'
           <div>
             <h3 class="text-white font-semibold text-lg">Resolution triggers the call</h3>
             <p class="mt-1 text-gray-400 text-sm max-w-2xl">
-              When a canary times out, BounceProof doesn't mark it healthy right away.
+              When a canary times out, CrashGuard doesn't mark it healthy right away.
               It first calls your verifier, passing along the canary's metadata — the same JSON payload you
               attached when the canary was created.
             </p>
             <svg viewBox="0 0 920 850" class="mt-6 w-full" role="img">
               <title>Canary expiry triggers a verifier call, which checks WooCommerce and responds</title>
-              <desc>After 5 minutes with no resolution, the canary expires. BounceProof's engine calls the verifier on the customer's internal API, and the verifier calls the WooCommerce API to get the order status before sending a response back to the engine.</desc>
+              <desc>After 5 minutes with no resolution, the canary expires. CrashGuard's engine calls the verifier on the customer's internal API, and the verifier calls the WooCommerce API to get the order status before sending a response back to the engine.</desc>
               <defs>
                 <marker id="arrowGray2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
                   <path d="M0,0 L10,5 L0,10 z" fill="#9ca3af" />
@@ -154,7 +154,7 @@ import SiteHeader from '../components/SiteHeader.astro'
 
               <g>
                 <rect x="130" y="340" width="600" height="120" rx="10" fill="#1f2937" stroke="#22c55e" stroke-width="1.5"/>
-                <text x="430" y="388" text-anchor="middle" font-size="26" font-weight="600" fill="#4ade80">BounceProof Engine</text>
+                <text x="430" y="388" text-anchor="middle" font-size="26" font-weight="600" fill="#4ade80">CrashGuard Engine</text>
                 <text x="430" y="422" text-anchor="middle" font-size="20" fill="#9ca3af">expiry detected, calls verifier</text>
               </g>
               <line x1="430" y1="460" x2="430" y2="510" stroke="#9ca3af" stroke-width="2.5" marker-end="url(#arrowGray2)"/>
@@ -179,7 +179,7 @@ import SiteHeader from '../components/SiteHeader.astro'
               <rect x="755" y="466" width="150" height="32" rx="6" fill="#0f1f17" stroke="#22c55e" stroke-width="1"/>
               <text x="830" y="488" text-anchor="middle" font-size="18" font-weight="600" fill="#ffffff">response</text>
 
-              <text x="430" y="820" text-anchor="middle" font-size="18" fill="#9ca3af">BounceProof calls the verifier, which checks WooCommerce, then responds back to the engine</text>
+              <text x="430" y="820" text-anchor="middle" font-size="18" fill="#9ca3af">CrashGuard calls the verifier, which checks WooCommerce, then responds back to the engine</text>
             </svg>
           </div>
         </li>
@@ -193,7 +193,7 @@ import SiteHeader from '../components/SiteHeader.astro'
             </p>
             <svg viewBox="0 0 920 850" class="mt-6 w-full" role="img">
               <title>Canary expiry triggers verifier call, which checks WooCommerce and returns Extend, Trigger, or Resolve</title>
-              <desc>After 5 minutes with no resolution, the canary expires. BounceProof's engine calls the verifier on the customer's internal API. The verifier calls the WooCommerce API to get the order status, then returns either an Extend verdict, a Trigger verdict, or a Resolve verdict back to the engine.</desc>
+              <desc>After 5 minutes with no resolution, the canary expires. CrashGuard's engine calls the verifier on the customer's internal API. The verifier calls the WooCommerce API to get the order status, then returns either an Extend verdict, a Trigger verdict, or a Resolve verdict back to the engine.</desc>
               <defs>
                 <marker id="arrowGray4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
                   <path d="M0,0 L10,5 L0,10 z" fill="#9ca3af" />
@@ -226,7 +226,7 @@ import SiteHeader from '../components/SiteHeader.astro'
 
               <g>
                 <rect x="130" y="340" width="600" height="120" rx="10" fill="#1f2937" stroke="#22c55e" stroke-width="1.5"/>
-                <text x="430" y="388" text-anchor="middle" font-size="26" font-weight="600" fill="#4ade80">BounceProof Engine</text>
+                <text x="430" y="388" text-anchor="middle" font-size="26" font-weight="600" fill="#4ade80">CrashGuard Engine</text>
                 <text x="430" y="422" text-anchor="middle" font-size="20" fill="#9ca3af">expiry detected, calls verifier</text>
               </g>
               <line x1="430" y1="460" x2="430" y2="510" stroke="#9ca3af" stroke-width="2.5" marker-end="url(#arrowGray4)"/>
@@ -290,7 +290,7 @@ import SiteHeader from '../components/SiteHeader.astro'
 
       <svg viewBox="0 0 940 400" class="mt-10 w-full block mx-auto" role="img">
         <title>A checkpoint recorded mid-workflow alongside canary creation and resolution</title>
-        <desc>A workflow passes through Order Service, Payment Service, and Fulfillment Service in sequence. Order Service creates a canary when the workflow starts and Fulfillment Service resolves it when the workflow finishes, while Payment Service records a checkpoint with the BounceProof Engine partway through, without affecting the canary's expiry.</desc>
+        <desc>A workflow passes through Order Service, Payment Service, and Fulfillment Service in sequence. Order Service creates a canary when the workflow starts and Fulfillment Service resolves it when the workflow finishes, while Payment Service records a checkpoint with the CrashGuard Engine partway through, without affecting the canary's expiry.</desc>
         <defs>
           <marker id="arrowGray5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
             <path d="M0,0 L10,5 L0,10 z" fill="#9ca3af" />
@@ -324,10 +324,10 @@ import SiteHeader from '../components/SiteHeader.astro'
           <text x="770" y="112" text-anchor="middle" font-size="15" fill="#9ca3af">workflow finishes</text>
         </g>
 
-        <!-- BounceProof Engine -->
+        <!-- CrashGuard Engine -->
         <g>
           <rect x="330" y="280" width="280" height="100" rx="10" fill="#1f2937" stroke="#22c55e" stroke-width="1.5"/>
-          <text x="470" y="322" text-anchor="middle" font-size="19" font-weight="600" fill="#4ade80">BounceProof Engine</text>
+          <text x="470" y="322" text-anchor="middle" font-size="19" font-weight="600" fill="#4ade80">CrashGuard Engine</text>
           <text x="470" y="348" text-anchor="middle" font-size="15" fill="#9ca3af">tracks the canary</text>
         </g>
 
@@ -359,7 +359,7 @@ import SiteHeader from '../components/SiteHeader.astro'
           <h3 class="text-white font-semibold text-lg">A timeline, not a status</h3>
           <p class="mt-2 text-gray-400 text-sm">
             Checkpoints are additive — each one is a timestamped stage name with optional metadata, stored
-            alongside the canary. <span class="text-green-500 font-semibold">BounceProof</span> never overwrites or
+            alongside the canary. <span class="text-green-500 font-semibold">CrashGuard</span> never overwrites or
             collapses them, so you get the full sequence of stages a workflow actually reached.
           </p>
         </div>

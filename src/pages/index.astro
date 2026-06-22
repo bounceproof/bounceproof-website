@@ -22,7 +22,7 @@ import SiteHeader from '../components/SiteHeader.astro'
         </h1>
         <p class="mt-6 text-lg text-gray-400 max-w-xl mx-auto">
           Start a canary the moment a workflow kicks off. Resolve it the moment it finishes.
-          If your workflow times out, <span class="text-green-500 font-semibold">BounceProof</span>
+          If your workflow times out, <span class="text-green-500 font-semibold">CrashGuard</span>
           alerts you the moment it happens.
         </p>
         <div class="mt-10 flex justify-center gap-4">
@@ -42,7 +42,7 @@ import SiteHeader from '../components/SiteHeader.astro'
         <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">This isn't log-based monitoring.</h2>
         <p class="mt-4 text-gray-400 max-w-2xl mx-auto">
           Traditional monitoring watches what already happened, after the fact, and asks you to guess what
-          a failure looks like in a sea of log lines and metrics. <span class="text-green-500 font-semibold">BounceProof</span> flips that around.
+          a failure looks like in a sea of log lines and metrics. <span class="text-green-500 font-semibold">CrashGuard</span> flips that around.
         </p>
       </div>
       <div class="grid sm:grid-cols-2 gap-6">
@@ -56,9 +56,9 @@ import SiteHeader from '../components/SiteHeader.astro'
           </ul>
         </div>
         <div class="bg-gray-900 border border-green-500/30 rounded-xl p-6">
-          <h3 class="text-green-400 font-semibold">BounceProof</h3>
+          <h3 class="text-green-400 font-semibold">CrashGuard</h3>
           <ul class="mt-3 space-y-2 text-sm text-gray-300 list-disc list-inside">
-            <li>Proactive — you assert success up front, BounceProof watches for its absence</li>
+            <li>Proactive — you assert success up front, CrashGuard watches for its absence</li>
             <li>One canary per workflow instance, regardless of how many systems it touches</li>
             <li>Alerts the instant a deadline passes, with no anomaly detection guesswork</li>
             <li>Confirms the workflow-specific definition of "done" — not just "it logged something"</li>
@@ -89,7 +89,7 @@ import SiteHeader from '../components/SiteHeader.astro'
           <div class="w-9 h-9 rounded-lg bg-green-500/15 text-green-400 flex items-center justify-center font-bold">3</div>
           <h3 class="mt-4 text-white font-semibold text-lg">Get Alerted</h3>
           <p class="mt-2 text-gray-400 text-sm">
-            If a canary doesn't resolve in time, <span class="text-green-500 font-semibold">BounceProof</span> flags it immediately so you can investigate.
+            If a canary doesn't resolve in time, <span class="text-green-500 font-semibold">CrashGuard</span> flags it immediately so you can investigate.
           </p>
         </div>
       </div>
@@ -103,7 +103,7 @@ import SiteHeader from '../components/SiteHeader.astro'
           <h3 class="text-white font-semibold text-lg">Custom verifiers</h3>
           <p class="mt-2 text-gray-400 text-sm">
             Resolving a canary doesn't have to mean "trust the caller." Attach a custom verifier to any
-            canary type, and <span class="text-green-500 font-semibold">BounceProof</span> will call out to your workflow-specific logic before marking it
+            canary type, and <span class="text-green-500 font-semibold">CrashGuard</span> will call out to your workflow-specific logic before marking it
             healthy — checking that an order total matches, a payment cleared for the right amount, or a
             file landed in the expected location. If the verifier rejects it, you get alerted even
             though the workflow technically reported in.
@@ -141,7 +141,7 @@ import SiteHeader from '../components/SiteHeader.astro'
         Stop finding out from your customers.
       </h2>
       <p class="mt-4 text-gray-400">
-        Drop the SDK into your workflow, point it at your own engine, and let <span class="text-green-500 font-semibold">BounceProof</span> watch your back.
+        Drop the SDK into your workflow, point it at your own engine, and let <span class="text-green-500 font-semibold">CrashGuard</span> watch your back.
       </p>
       <div class="mt-8">
         <a href="#" class="px-6 py-3 rounded bg-green-600 hover:bg-green-500 text-white font-medium transition-colors inline-block">
